@@ -2,19 +2,249 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
   <title>Питер оптика</title>
   <link rel="preload" href="fonts/Nunito-Light.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/Nunito-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/Nunito-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/Nunito-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/Nunito-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+  <link rel="manifest" href="./favicon/site.webmanifest">
+  <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="main.css">
   <script defer="defer" src="app.js"></script>
 </head>
 <body>
-  <h1>Some Text!</h1>
-  <svg>
-    <use xlink:href="./images/sprite.svg#vk_footer"></use>
-  </svg>
+  <header class="header">
+    <div class="header__desktop">
+      <div class="header__top">
+        <a class="diagnostics" href="diagnostics.html">Запись на бесплатную диагностику</a>
+
+        <div class="container header__container">
+          <a class="header__logo" href="index.html">
+            <img src="./images/logo.png" alt="Логотип">
+          </a>
+
+          <div class="header__control control">
+            <div class="control__top">
+              <ul class="control__top-list">
+                <li class="control__top-item">
+                  <a class="control__tel" href="tel:+78006007280">8 (800) 600-72-80</a>
+                </li>
+                <li class="control__top-item">
+                  <a class="control__director" href="#">
+                    <svg class="control__director-mail">
+                      <use xlink:href="./images/sprite.svg#mail"></use>
+                    </svg>
+                    Написать директору</a>
+                </li>
+                <li class="control__top-item">
+                  <a class="control__status" href="#">Статус заказа</a>
+                </li>
+              </ul>
+
+              <span style="background-image: url('./images/location__icon.svg')" class="control__location">Санкт-Петербург</span>
+
+              <div class="control__search">
+                <button class="control__search-open">
+                  <svg class="control__search-icon">
+                    <use xlink:href="./images/sprite.svg#search"></use>
+                  </svg>
+                </button>
+
+                <input tabindex="-1" type="text" class="control__search-input">
+              </div>
+
+              <a class="control__login" href="#">
+                <svg class="control__login-icon">
+                  <use xlink:href="./images/sprite.svg#login"></use>
+                </svg>
+              </a>
+
+              <a class="control__basket" href="#">
+                <svg class="control__basket-icon">
+                  <use xlink:href="./images/sprite.svg#basket"></use>
+                </svg>
+              </a>
+            </div>
+
+            <nav class="control__bottom">
+              <ul class="control__nav-list">
+                <li class="control__nav-item"><a class="control__nav-link" href="optics.html">Наши салоны</a></li>
+                <li class="control__nav-item"><a class="control__nav-link" href="payment.html">Оплата</a></li>
+                <li class="control__nav-item"><a class="control__nav-link" href="delivery.html">Доставка</a></li>
+                <li class="control__nav-item"><a class="control__nav-link" href="contacts.html">Контакты</a></li>
+                <li class="control__nav-item"><a class="control__nav-link" href="articles.html">Статьи</a></li>
+                <li class="control__nav-item"><a class="control__nav-link" href="news.html">новости</a></li>
+                <li class="control__nav-item"><a class="control__nav-link" href="stock.html">акции</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="header__bottom">
+        <div class="container">
+          <nav class="header__nav">
+            <ul class="header__nav-list">
+              <li class="header__nav-item">
+                <a style="background-image: url('./images/oprava.png'); padding-left: 70px;background-position-y: 50%" class="header__nav-link" href="catalog.html"><span class="header__nav-text header__nav-text_active">оправы</span></a>
+              </li>
+              <li class="header__nav-item">
+                <a style="background-image: url('./images/lenses.png'); padding-left: 47px;" class="header__nav-link" href="catalog.html"><span class="header__nav-text">контактные линзы</span></a>
+              </li>
+              <li class="header__nav-item">
+                <a style="background-image: url('./images/accessories.png'); padding-left: 46px;background-position-y: 50%" class="header__nav-link" href="catalog.html"><span class="header__nav-text">аксессуары</span></a>
+              </li>
+              <li class="header__nav-item">
+                <a style="background-image: url('./images/sunglasses.png'); padding-left: 66px; background-position-y: 50%;" class="header__nav-link" href="catalog.html"><span class="header__nav-text">солнцезащитные очки</span></a>
+              </li>
+              <li class="header__nav-item">
+                <a style="background-image: url('./images/oprava.png'); padding-left: 70px;background-position-y: 50%" class="header__nav-link" href="catalog.html"><span class="header__nav-text">ray-ban</span></a>
+              </li>
+              <li class="header__nav-item">
+                <a style="background-image: url('./images/kids.png'); padding-left: 66px; background-position-y: 50%" class="header__nav-link" href="catalog.html"><span class="header__nav-text header__nav-text_kids"><span style="color: #009FE6;">k</span><span style="color: #FF7A00;">i</span><span style="color: #619B31;">d</span><span style="color: #FF2586;">s</span></span></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="header__mobile">
+      <div class="header__mobile-menu menu">
+        <div class="menu__top">
+          <div class="container menu__container">
+            <input type="text" style="background-image: url('./images/search.svg');" class="menu__search">
+
+            <button style="background-image: url('./images/menu__close.svg')" class="menu__close"></button>
+          </div>
+        </div>
+
+        <div class="menu__bottom">
+          <div class="container menu__container-bottom">
+            <nav class="menu__nav">
+              <ul class="menu__nav-list">
+                <li class="menu__nav-item">
+                  <a href="optics.html" class="menu__nav-link">Наши салоны</a></li>
+                <li class="menu__nav-item">
+                  <a href="payment.html" class="menu__nav-link">Оплата</a></li>
+                <li class="menu__nav-item">
+                  <a href="delivery.html" class="menu__nav-link">Доставка</a></li>
+                <li class="menu__nav-item">
+                  <a href="contacts.html" class="menu__nav-link">Контакты</a>
+                </li>
+                <li class="menu__nav-item">
+                  <a href="articles.html" class="menu__nav-link">Статьи</a>
+                </li>
+                <li class="menu__nav-item">
+                  <a href="news.html" class="menu__nav-link">Новости</a>
+                </li>
+                <li class="menu__nav-item">
+                  <a href="stock.html" class="menu__nav-link">Акции</a>
+                </li>
+                <li class="menu__nav-item">
+                  <a href="catalog.html" class="menu__nav-link">Каталог</a>
+                </li>
+              </ul>
+            </nav>
+
+            <ul class="menu__controls">
+              <li class="menu__controls-item">
+                <a class="menu__controls-link" href="#">Личный кабинет</a>
+              </li>
+              <li class="menu__controls-item">
+                <a class="menu__controls-link" href="#">Статус заказа</a>
+              </li>
+              <li class="menu__controls-item">
+                <a class="menu__controls-link" href="#">Написать директору</a>
+              </li>
+              <li class="menu__controls-item">
+                <a class="menu__controls-phone" href="tel:+78006007280">8 (800) 600-72-80</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="header__mobile-top">
+        <div class="container header__mobile-top-container">
+          <a class="header__logo" href="index.html">
+            <picture>
+              <source srcset="/images/logo_320.png" media="(max-width: 540px)">
+              <source srcset="/images/logo_768.png" media="(max-width: 768px)">
+              <img class="header__mobile-logo" src="./images/logo_1024.png" alt="Логотип">
+            </picture>
+          </a>
+
+          <a class="diagnostics" href="diagnostics.html">Запись на бесплатную диагностику</a>
+          
+          <div class="header__mobile-controls">
+            <a href="tel:+78006007280" style="background-image: url('./images/phone-icon.svg')" class="header__mobile-phone"></a>
+
+            <button class="header__mobile-burger burger">
+              <span class="burger__item"></span>
+              <span class="burger__item"></span>
+              <span class="burger__item"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="header__mobile-bottom">
+        <div class="container header__mobile-bottom-container">
+
+          <input type="text" style="background-image: url('./images/search.svg')" class="header__mobile-search">
+
+          <div class="header__mobile-nav">
+            <div class="header__mobile-authorization">
+              <a href="#" class="header__mobile-authorization-item">
+                Авторизуйтесь для получения скидки
+              </a>
+
+              <a href="#" class="header__mobile-authorization-item">
+                Открытые магазины
+              </a>
+            </div>
+
+            <ul class="header__mobile-nav-list">
+              <li class="header__mobile-nav-item">
+                <a href="catalog.html" class="header__mobile-nav-link">
+                  оправы</a>
+              </li>
+              <li class="header__mobile-nav-item">
+                <a href="catalog.html" class="header__mobile-nav-link">контактные линзы</a>
+              </li>
+              <li class="header__mobile-nav-item">
+                <a href="catalog.html" class="header__mobile-nav-link">kids</a>
+              </li>
+              <li class="header__mobile-nav-item">
+                <a href="catalog.html" class="header__mobile-nav-link">аксессуары</a>
+              </li>
+              <li class="header__mobile-nav-item">
+                <a href="catalog.html" class="header__mobile-nav-link">солнцезащитные очки</a>
+              </li>
+              <li class="header__mobile-nav-item">
+                <a href="catalog.html" class="header__mobile-nav-link">ray-ban</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__container"></div>
+  </footer>
 </body>
 </html>

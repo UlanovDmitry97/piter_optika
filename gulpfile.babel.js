@@ -126,6 +126,7 @@ const watchFiles = () => {
 watch('src/**/*.html', htmlMinify)
 watch('src/styles/scss/**/*.scss', stylesDev);
 watch('src/images/svg/**/*.svg', gulpSvgSprites)
+watch('src/images/**', images);
 watch('src/js/**/*.js', scripts)
 watch('src/resources/**', resources)
 

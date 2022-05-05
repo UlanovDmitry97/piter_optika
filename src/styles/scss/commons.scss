@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+}
+
 a {
   text-decoration: none;
 }
@@ -22,9 +26,36 @@ ul, ol {
 
 img {
   display: block;
-  max-width: 100%;
 }
 
 html {
   font-family: 'Nunito', sans-serif;
+}
+
+.container {
+  max-width: 1785px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1366px) {
+  .container {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+@media (max-width: 968px) {
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
 }
