@@ -1,0 +1,58 @@
+@import '_mixin.scss';
+@import '_variables.scss';
+
+.best-offers {
+  margin-bottom: $marginSection;
+
+  &__container {
+    position: relative;
+  }
+
+  &__show-more {
+    position: absolute;
+    right: 33px;
+    top: 27px;
+    font-size: 16px;
+    line-height: 1;
+    color: #5690f5;
+  }
+
+  &__img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1366px) {
+  .best-offers {
+    margin-bottom: $marginSection_1024;
+
+    &__show-more {
+      top: 16px;
+      right: 77px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .best-offers {
+    &__show-more {
+      top: 34px;
+      right: 38px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .best-offers {
+    margin-bottom: $marginSection_320;
+
+    &__show-more {
+      right: 11px;
+      top: 9px;
+      font-weight: 300;
+      font-size: 10px;
+      line-height: 14px;
+      color: #5690f5;
+    }
+  }
+}

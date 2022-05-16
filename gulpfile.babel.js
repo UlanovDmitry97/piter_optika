@@ -1,18 +1,36 @@
-import { src, dest, series, watch } from 'gulp';
+import { src, dest, series, watch, parallel } from 'gulp';
 import concat from 'gulp-concat';
 import htmlMin from 'gulp-htmlmin';
 import autoprefixer from 'gulp-autoprefixer';
 import cleanCSS from 'gulp-clean-css';
 import svgSprite from 'gulp-svg-sprite';
 import image from 'gulp-image';
-import uglify from 'gulp-uglify-es';
-import babel from 'gulp-babel';
 import browserSync from 'browser-sync';
 import sourcemaps from 'gulp-sourcemaps';
 import del from 'del';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
-import notify from 'gulp-notify';
+import webpack from 'webpack-stream';
+
+let isDev = true;
+let isProd = !isDev;
+
+let webpackConfig = {
+  output: {
+    filename: 'main.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: '/node_modules/'
+      }
+    ]
+  },
+  mode: isDev ? 'development' : 'production',
+  devtool: isDev ? 'eval-source-map' : 'none'
+}
 
 const sass = gulpSass(dartSass)
 
@@ -39,7 +57,10 @@ const styles = () => {
 };
 
 const stylesDev = () => {
-  return  src ('src/styles/**/*.scss')
+  return  src ([
+    'src/styles/swiper-bundle.min.css',
+    'src/styles/**/*.scss'
+    ])
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(concat('main.css'))
@@ -86,31 +107,18 @@ const images = () => {
 }
 
 const scripts = () => {
-  return src([
-    'src/js/components/**/*.js',
-    'src/js/main.js'
-  ])
-    .pipe(babel({
-      presets: ['@babel/env']
-    }))
-    .pipe(concat('app.js'))
-    .pipe(uglify({
-      toplevel: true
-    }).on('error', notify.onError()))
+  return src('src/js/main.js')
+    .pipe(webpack(
+      webpackConfig
+    ))
     .pipe(dest('dist'))
 }
 
 const scriptsDev = () => {
-  return src([
-    'src/js/components/**/*.js',
-    'src/js/main.js'
-  ])
-    .pipe(sourcemaps.init())
-    .pipe(babel({
-      presets: ['@babel/env']
-    }))
-    .pipe(concat('app.js'))
-    .pipe(sourcemaps.write())
+  return src('src/js/main.js')
+    .pipe(webpack(
+      webpackConfig
+    ))
     .pipe(dest('dist'))
     .pipe(browserSync.stream())
 }
@@ -130,5 +138,5 @@ watch('src/images/**', images);
 watch('src/js/**/*.js', scripts)
 watch('src/resources/**', resources)
 
-exports.build = series(clean, resources, htmlMinify, scripts, styles, images, gulpSvgSprites)
-exports.dev = series(clean, resources, htmlMinify, scriptsDev, stylesDev, images, gulpSvgSprites, watchFiles )
+exports.build = series(clean, parallel(resources, htmlMinify, scripts, styles, images), gulpSvgSprites)
+exports.dev = series(clean, parallel(resources, htmlMinify, scriptsDev, stylesDev, images, gulpSvgSprites), watchFiles )

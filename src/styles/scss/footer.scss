@@ -1,0 +1,374 @@
+@import '_variables.scss';
+@import '_mixin.scss';
+
+.footer {
+  max-width: 1920px;
+  background-color: $darkText;
+
+  &__container-top {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+  }
+
+  &__container-bottom {
+    position: relative;
+    padding-bottom: 20px;
+  }
+
+  &__container-mobile {
+    display: none;
+  }
+
+  &__logo-icon {
+    width: 250px;
+    height: 107px;
+  }
+
+  &__nav {
+    display: flex;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__nav-list:not(:last-child) {
+    margin-right: 60px;
+  }
+
+  &__item {
+    max-width: 175px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__nav-title {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 30px;
+    color: #fff;
+  }
+
+  &__nav-link {
+    color: #E0E0E0;
+  }
+
+  &__tell {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 38px;
+    color: #fff;
+  }
+
+  &__item-tell {
+    margin-bottom: 14px;
+  }
+
+  &__inner {
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+  }
+
+  &__copy {
+    margin-top: 30px;
+    display: block;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1;
+    color: #fff;
+    opacity: .4;
+  }
+
+  &__soci-link {
+    display: block;
+    width: 52px;
+    height: 52px;
+    background-repeat: no-repeat;
+  }
+
+  &__list-soci {
+    display: flex;
+    justify-content: flex-end;
+    gap: 17px;
+  }
+
+  &__item-soci {
+    margin-bottom: 30px;
+  }
+
+  &__cards {
+    display: flex;
+    gap: 8.5px;
+  }
+
+  &__card {
+    width: 63px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .footer{
+
+    &__container-top {
+      flex-wrap: wrap;
+    }
+
+    &__nav-list:not(:last-child) {
+      margin-right: 0;
+    }
+
+    &__list:not(:last-child) {
+      margin-right: 0;
+    }
+
+    &__logo-icon {
+      width: 200px;
+      height: 86px;
+    }
+
+    &__nav {
+      width: 100%;
+      justify-content: space-between;
+      order: 3;
+      margin-top: 22px;
+    }
+
+    &__inner {
+      display: flex;
+      gap: 40px;
+    }
+
+    &__list-soci {
+      order: 2;
+    }
+
+    &__item-soci {
+      margin-bottom: 0;
+    }
+
+    &__soci-link {
+      background-size: contain;
+      width: 38px;
+      height: 38px;
+    }
+
+    &__card {
+      width: 60px;
+      height: 38px;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    &__tell {
+      font-size: 22px;
+      line-height: 30px;
+    }
+  }
+}
+
+@media (max-width: 976px) {
+  .footer {
+    &__logo {
+      width: 100%;
+    }
+
+    &__nav-list:not(:nth-child(3n+3)) {
+      margin-right: 30px;
+    }
+
+    &__list-tell {
+      width: 100%;
+      height: 0;
+      order: 3;
+      transform: translateY(-140px);
+    }
+
+    &__item-tell {
+      text-align: end;
+    }
+
+    &__nav {
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    &__inner {
+      bottom: 63px;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .footer__nav-list:not(:nth-child(3n+3)) {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 580px) {
+  .footer {
+    &__logo {
+      display: none;
+    }
+
+    &__nav-link {
+      &:active {
+        text-decoration: underline;
+      }
+    }
+
+    &__item {
+      max-width: 100px;
+      font-size: 8px;
+    }
+
+    &__list {
+      position: absolute;
+      max-height: 0;
+      overflow: hidden;
+      background: rgba(137, 134, 134, 0.1);
+      backdrop-filter: blur(23px);
+      border-radius: 8px;
+      transition: height .2s ease-in-out;
+
+      &_active {
+        max-height: 10000px;
+        padding: 8.5px 11px;
+      }
+
+      &_last {
+        transform: translateX(-50px);
+      }
+    }
+
+    &__nav-title {
+      position: relative;
+      display: block;
+      margin-top: 0;
+      padding-right: 10px;
+      font-size: 10px;
+      line-height: 13px;
+
+      &:after {
+        position: absolute;
+        bottom: 50%;
+        right: 0;
+        content: "";
+        display: block;
+        width: 3px;
+        height: 3px;
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        transform: rotate(-135deg) translateY(-100%);
+      }
+
+      &_active {
+        text-decoration: underline;
+
+        &:after {
+          transform: rotate(45deg) translateY(0%);
+        }
+      }
+    }
+
+    &__container-top {
+      padding-top: 14px;
+    }
+
+    &__container-bottom {
+      padding-bottom: 70px;
+    }
+
+    &__list:not(:nth-child(3n+3)) {
+      margin-right: 0;
+    }
+
+    &__list-tell {
+      height: auto;
+      margin-top: 20px;
+      transform: translateY(0);
+    }
+
+    &__item-tell {
+      margin-bottom: 0;
+      text-align: left;
+
+      &:not(:last-child) {
+        margin-bottom: 4px;
+      }
+    }
+
+    &__tell {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    &__inner {
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 5px ;
+      bottom: 70px;
+      right: 13px;
+    }
+
+    &__cards {
+      align-items: flex-end;
+      gap: 4px;
+    }
+
+    &__card {
+      width: 30px;
+      height: 18px;
+    }
+
+    &__list-soci {
+      order: 0;
+    }
+
+    &__soci-link {
+      width: 24px;
+      height: 24px;
+    }
+
+    &__copy {
+      margin-top: 11px;
+      font-size: 8px;
+      line-height: 11px;
+    }
+
+    &__container-mobile {
+      position: fixed;
+      display: block;
+      bottom: 0;
+      width: 100%;
+      padding-top: 10px;
+      background-color: #fff;
+      padding-bottom: 10px;
+      z-index: 100000;
+    }
+  }
+
+  .mobile-nav {
+    &__list {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__link {
+      font-size: 10px;
+      font-weight: 700;
+      color: $darkText;
+    }
+  }
+}

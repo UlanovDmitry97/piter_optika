@@ -1,0 +1,50 @@
+@import '_variables.scss';
+@import '_mixin.scss';
+
+.promotions-slider {
+  margin-top: 62px;
+  margin-bottom: 100px;
+
+  &__swiper {
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 65px;
+  }
+
+  &__img {
+    border-radius: 20px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1366px) {
+  .promotions-slider {
+    margin-bottom: $marginSection_1024;
+    margin-top: 56px;
+
+    &__swiper {
+      padding-bottom: 38px;
+    }
+  }
+}
+
+@media (max-width: 976px) {
+  .promotions-slider {
+    margin-bottom: $marginSection_768;
+  }
+}
+
+@media (max-width: 480px) {
+  .promotions-slider {
+    margin-top: 20px;
+    margin-bottom: $marginSection_320;
+
+    &__img {
+      border-radius: 4px;
+    }
+
+    &__swiper {
+      padding-bottom: 20px;
+    }
+  }
+}

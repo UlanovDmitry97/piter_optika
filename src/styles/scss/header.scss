@@ -13,7 +13,17 @@
 
   &__logo {
     display: inline-block;
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 600;
+    color: $darkText;
     margin-right: 90px;
+  }
+
+  &__logo-img {
+    width: 200px;
+    height: 86px;
+    margin-bottom: 17px;
   }
 
   &__bottom {
@@ -36,8 +46,32 @@
     transition: transform .2s ease-in-out;
 
     &:not(:first-child) {
-      padding-left: 35px;
+      padding-left: 31px;
       border-left: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  &__nav-icon {
+    fill: #fff;
+
+    &_accessories,
+    &_lenses {
+      margin-right: 4px;
+      width: 40px;
+      height: 40px;
+    }
+
+    &_kids,
+    &_frame {
+      margin-right: 8px;
+      width: 60px;
+      height: 28px;
+    }
+
+    &_sunglasses {
+      margin-right: 8px;
+      width: 60px;
+      height: 32px;
     }
   }
 
@@ -46,7 +80,8 @@
   }
 
   &__nav-link {
-    display: block;
+    display: flex;
+    align-items: center;
     color: #fff;
     background-repeat: no-repeat;
     transition: transform .2s ease-in-out;
@@ -78,6 +113,215 @@
     &_active {
       text-decoration: underline;
     }
+  }
+
+  &__modal-wrapp {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 10000;
+    transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+
+    &_visible {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__modal-director {
+    display: none;
+    padding: 40px 30px;
+    background-color: #fff;
+    border-radius: 20px;
+
+    &_visible {
+      display: block;
+    }
+  }
+}
+
+.director-modal {
+  position: relative;
+  width: 450px;
+
+  &__fieldset {
+    @include fieldsetReset();
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    color: $darkText;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1;
+    color: $darkText;
+    opacity: 0.5;
+  }
+
+  &__input {
+    margin-bottom: 20px;
+    padding: 14.5px 12px;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 400;
+    color: $darkText;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::placeholder {
+      opacity: 0.5;
+      color: $darkText;
+    }
+  }
+
+  &__textarea {
+    min-height: 142px;
+    padding: 15px;
+    margin-top: 18px;
+    margin-bottom: 50px;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    resize: none;
+  }
+
+  &__submit {
+    @include buttonReset();
+    padding: 7.5px;
+    width: 100%;
+    background-color: $cornflower;
+    border-radius: 10px;
+    font-size: 20px;
+    line-height: 27px;
+    color: #fff;
+    transition: background-color .2s ease-in-out;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+      background-color: #4166A8;
+    }
+  }
+
+  &__close {
+    @include buttonReset();
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.status-modal {
+  position: relative;
+  display: none;
+  padding: 80px 54px;
+  width: 1320px;
+  background-color: #fff;
+  border-radius: 20px;
+
+  &__close {
+    @include buttonReset();
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &__fieldset {
+    @include fieldsetReset();
+  }
+
+  &__legend {
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.2;
+    color: $darkText;
+  }
+  
+  &_visible {
+    display: block;
+  }
+
+  &__delimiter {
+    height: 1px;
+    width: calc(100% + 108px);
+    background-color: #E0E0E0;
+    transform: translateX(-54px);
+  }
+
+  &__name-span {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+  }
+
+  &__name {
+    margin-bottom: 20px;
+    font-size: 32px;
+    line-height: 1;
+    color: $darkText;
+    opacity: 0.5;
+  }
+
+  &__name-input {
+    margin-bottom: 40px;
+    padding: 20.5px 28px;
+    border-radius: 10px;
+    border: 1px solid #E0E0E0;
+    font-size: 28px;
+    line-height: 1;
+    color: $darkText;
+  }
+
+  &__submit {
+    @include buttonReset();
+    margin-bottom: 25px;
+    padding: 10.5px;
+    width: 100%;
+    font-size: 36px;
+    line-height: 49px;
+    color: #fff;
+    border-radius: 10px;
+    background-color: $cornflower;
+    transition: background-color .2s ease-in-out;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+      background-color: #4166A8;
+    }
+  }
+
+  &__text {
+    font-size: 24px;
+    line-height: 1.2;
+    color: $darkText;
+    opacity: .5;
   }
 }
 
@@ -148,6 +392,17 @@
       color: $cornflower;
     }
   }
+
+  &__director {
+    @include buttonReset();
+    font-weight: 400;
+  }
+
+  &__status {
+    @include buttonReset();
+    font-weight: 400;
+  }
+
 
   &__director-mail {
     width: 24px;
@@ -326,7 +581,30 @@
     }
 
     &__nav-text {
-      font-size: 20px;
+      font-size: 22px;
+      line-height: 30px;
+    }
+
+    &__nav-icon {
+      &_accessories,
+      &_lenses {
+        margin-right: 2px;
+        width: 30px;
+        height: 30px;
+      }
+
+      &_kids,
+      &_frame {
+        margin-right: 6px;
+        width: 50px;
+        height: 18px;
+      }
+
+      &_sunglasses {
+        margin-right: 6px;
+        width: 50px;
+        height: 22px;
+      }
     }
   }
 }
@@ -360,6 +638,13 @@
 
     &__logo {
       margin-right: 0;
+      font-size: 14px;
+    }
+
+    &__logo-img {
+      width: 120px;
+      height: 52px;
+      margin-bottom: 10px;
     }
 
     &__mobile-controls {
@@ -423,17 +708,55 @@
 
     &__mobile-nav-link {
       display: flex;
-      padding: 11.5px 22px;
+      align-items: center;
+      padding: 8.5px 22px;
       border-radius: 8px;
       border: 1px solid $cornflower;
       font-size: 20px;
+      line-height: 27px;
       color: $darkText;
+      text-transform: uppercase;
       transition: color .2s ease-in-out;
+
+      &_active {
+        color: $cornflower;
+
+        & .header__mobile-nav-icon {
+          fill: $cornflower;
+        }
+      }
 
       &:active {
         color: $cornflower;
       }
+
+      &:active .header__mobile-nav-icon {
+        fill: $cornflower;
+      }
     }
+
+    &__mobile-nav-icon {
+      margin-right: 8px;
+      fill: $darkText;
+      transition: fill .2s ease-in-out;
+
+      &_frame,
+      &_kids,
+      &_sunglasses {
+        width: 40px;
+        height: 34px;
+      }
+
+      &_lenses,
+      &_accessories {
+        width: 36px;
+        height: 33px;
+      }
+    }
+  }
+
+  .status-modal {
+    width: 860px;
   }
 
   .diagnostics {
@@ -468,6 +791,7 @@
     width: 100%;
     background-color: #fff;
     transform: translateX(-100%);
+    z-index: 1000;
     transition: transform .2s ease-in-out;
 
     &_visible {
@@ -536,6 +860,16 @@
       line-height: 1;
       color: $darkText;
       text-align: right;
+
+      &_director,
+      &_status {
+        @include buttonReset();
+      }
+    }
+
+    &__controls-item {
+      display: flex;
+      justify-content: flex-end;
     }
 
     &__controls-item {
@@ -559,6 +893,10 @@
 
 @media (max-width: 968px) {
   .header {
+    &__modal-wrapp {
+      align-items: flex-start;
+    }
+
     &__mobile-top-container {
       padding-top: 14px;
       padding-bottom: 14px;
@@ -572,7 +910,16 @@
       padding-top: 8px;
       padding-bottom: 8px;
     }
+  }
 
+  .status-modal {
+    width: 690px;
+    padding-bottom: 50px;
+
+    &__close {
+      top: 30px;
+      right: 30px;
+    }
   }
 
   .diagnostics {
@@ -602,6 +949,16 @@
 
 @media (max-width: 480px) {
   .header {
+    &__logo {
+      font-size: 6px;
+    }
+
+    &__logo-img {
+      width: 60px;
+      height: 26px;
+      margin-bottom: 4px;
+    }
+
     &__mobile-top-container {
       padding-top: 7px;
       padding-bottom: 7px;
@@ -624,7 +981,7 @@
     }
 
     &__mobile-authorization-item {
-      padding: 8.5px 17px;
+      padding: 9.5px 17px;
       border-radius: 4px;
       font-size: 10px;
     }
@@ -639,13 +996,82 @@
     }
 
     &__mobile-nav-list {
-      gap: 5px;
+      gap: 6px;
     }
 
     &__mobile-nav-link {
-      padding: 4px 5px;
+      padding: 2px 5px;
       border-radius: 4px;
       font-size: 10px;
+      line-height: 13px;
+    }
+
+    &__mobile-nav-icon {
+      margin-right: 4px;
+
+      &_frame,
+      &_kids,
+      &_sunglasses {
+        width: 21px;
+        height: 18px;
+      }
+
+      &_lenses,
+      &_accessories {
+        width: 21px;
+        height: 18px;
+      }
+    }
+  }
+
+  .status-modal {
+    width: 300px;
+    padding: 55px 11px 30px 11px;
+
+    &__close {
+      top: 20px;
+      right: 20px;
+      width: 11px;
+      height: 11px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &__legend {
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    &__delimiter {
+      width: calc(100% + 22px);
+      transform: translateX(-11px);
+    }
+
+    &__submit {
+      padding: 10.5px;
+      margin-bottom: 10px;
+      font-size: 18px;
+      line-height: 25px;
+    }
+
+    &__name-input {
+      width: 100%;
+      padding: 16px 11px;
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    &__name-span {
+      margin-top: 37px;
+    }
+
+    &__name {
+      font-size: 20px;
+    }
+
+    &__text {
+      font-size: 10px;
+      line-height: 1.2;
     }
   }
 
@@ -658,6 +1084,9 @@
   }
 
   .menu {
+    height: 100vh;
+    overflow: auto;
+
     &__container-bottom {
       flex-direction: column;
       padding: 18px 20px 65px;
