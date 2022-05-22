@@ -212,14 +212,21 @@
     width: 100%;
     background-color: $cornflower;
     border-radius: 10px;
+    border: 2px solid transparent;
     font-size: 20px;
     line-height: 27px;
     color: #fff;
-    transition: background-color .2s ease-in-out;
+    transition: background-color .2s ease-in-out, border .2s ease-in-out, color .2s ease-in-out;
 
-    &:hover,
+    &:hover:not(:active) {
+      border-color: $cornflower;
+      color: $cornflower;
+      background-color: #fff;
+    }
+
     &:active,
     &:focus-visible {
+      outline: none;
       background-color: #4166A8;
     }
   }
@@ -307,12 +314,19 @@
     line-height: 49px;
     color: #fff;
     border-radius: 10px;
+    border: 2px solid transparent;
     background-color: $cornflower;
-    transition: background-color .2s ease-in-out;
+    transition: background-color .2s ease-in-out, border .2s ease-in-out, color .2s ease-in-out;
 
-    &:hover,
-    &:active,
+    &:hover:not(:active),
     &:focus-visible {
+      border-color: $cornflower;
+      color: $cornflower;
+      background-color: #fff;
+    }
+
+    &:active {
+      outline: none;
       background-color: #4166A8;
     }
   }
@@ -468,7 +482,6 @@
     width: 30px;
     height: 27px;
     stroke: $darkText;
-    stroke-width: 1.8;
     transition: stroke .2s ease-in-out;
 
     &:hover {

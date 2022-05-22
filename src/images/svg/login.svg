@@ -1,4 +1,13 @@
-<svg width="23" height="27" viewBox="0 0 23 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11.2205 14.2933C14.8944 14.2933 17.838 11.3496 17.838 7.67827C17.838 4.00698 14.8944 1.06445 11.2205 1.06445C7.54788 1.06445 4.60303 4.00698 4.60303 7.67827C4.60303 11.3496 7.54788 14.2933 11.2205 14.2933"  />
-<path d="M1.22021 21.7835C1.22021 25.1836 5.79818 26.0648 11.2202 26.0648C16.6135 26.0648 21.2202 25.2148 21.2202 21.8135C21.2202 18.4135 16.6435 17.5322 11.2202 17.5322C5.82694 17.5322 1.22021 18.3822 1.22021 21.7835Z" />
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 17 20.1" style="enable-background:new 0 0 17 20.1;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;fill:none;stroke:#232323;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#232323;stroke-miterlimit:10;}
+</style>
+<path display="none" fill="none" stroke-miterlimit="10" class="st0" d="M13,19.6H4c-1.9,0-3.5-1.6-3.5-3.5v0c0-1.9,1.6-3.5,3.5-3.5h9c1.9,0,3.5,1.6,3.5,3.5v0
+	C16.5,18,14.9,19.6,13,19.6z"/>
+<ellipse fill="none" stroke-miterlimit="10" class="st1" cx="8.5" cy="16.1" rx="8" ry="3.5"/>
+<circle fill="none" stroke-miterlimit="10" class="st1" cx="8.5" cy="5.5" r="5"/>
 </svg>

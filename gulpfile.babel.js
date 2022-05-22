@@ -29,7 +29,7 @@ let webpackConfig = {
     ]
   },
   mode: isDev ? 'development' : 'production',
-  devtool: isDev ? 'eval-source-map' : 'none'
+    devtool: isDev ? 'eval-source-map' : 'hidden-source-map'
 }
 
 const sass = gulpSass(dartSass)
@@ -44,7 +44,10 @@ const resources = () => {
 }
 
 const styles = () => {
-  return src('src/styles/scss/**/*.scss')
+  return src([
+    'src/styles/choices.min.css',
+    'src/styles/swiper-bundle.min.css',
+    'src/styles/scss/**/*.scss'])
     .pipe(concat('main.scss'))
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'],
@@ -58,6 +61,7 @@ const styles = () => {
 
 const stylesDev = () => {
   return  src ([
+    'src/styles/choices.min.css',
     'src/styles/swiper-bundle.min.css',
     'src/styles/**/*.scss'
     ])
@@ -138,5 +142,5 @@ watch('src/images/**', images);
 watch('src/js/**/*.js', scripts)
 watch('src/resources/**', resources)
 
-exports.build = series(clean, parallel(resources, htmlMinify, scripts, styles, images), gulpSvgSprites)
+exports.build = series(clean, parallel(resources, htmlMinify, scriptsDev, styles, images), gulpSvgSprites)
 exports.dev = series(clean, parallel(resources, htmlMinify, scriptsDev, stylesDev, images, gulpSvgSprites), watchFiles )

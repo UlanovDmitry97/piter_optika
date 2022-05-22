@@ -1,7 +1,9 @@
 import {createPopularGoodsSwiper, createPromotionSwiper} from './components/Swipers';
 import {showMorePopular} from './components/showMore'
 import {directorModal, modalBuy, statusModal} from "./components/HeaderModal";
-import {footerMenu} from "./components/footerMenu";
+import {footerMenu, scroll} from "./components/footer";
+import {filterMobile, sortingDropdown, sortingMobile, sortingShowMore} from "./components/sorting";
+import {sortingSelect} from "./components/choise";
 
 const burger = document.querySelector('.burger');
 const menu = document.querySelector('.menu');
@@ -50,5 +52,13 @@ statusModal();
 // Модальное окно на главной
 modalBuy();
 
-//Футер меню
+//Футер
 footerMenu();
+scroll();
+
+//Сортировка
+sortingDropdown();
+sortingShowMore();
+sortingSelect();
+filterMobile();
+sortingMobile();

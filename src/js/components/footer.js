@@ -23,3 +23,32 @@ export function footerMenu() {
     });
   });
 };
+
+export function scroll() {
+  const scrollBtn = document.querySelector('.scroll');
+
+  window.addEventListener('scroll', () => {
+    const coordinatesY = window.scrollY;
+    const screenHeight = window.screen.height;
+
+    if (coordinatesY >= screenHeight) {
+      scrollBtn.classList.add('scroll_visible');
+    }
+
+    if(document.body.offsetHeight - 332 <= window.innerHeight + coordinatesY) {
+      scrollBtn.classList.add('scroll_bottom');
+    }
+
+    if(document.body.offsetHeight - 332 > window.innerHeight + coordinatesY) {
+      scrollBtn.classList.remove('scroll_bottom');
+    }
+
+    if (coordinatesY < screenHeight) {
+      scrollBtn.classList.remove('scroll_visible');
+    }
+  }, { passive: true })
+
+  scrollBtn.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  })
+};
