@@ -1,0 +1,651 @@
+@import '_mixin.scss';
+@import '_variables.scss';
+
+.reviews {
+  margin-bottom: $marginSection;
+
+  &__title {
+    display: inline-block;
+    margin-bottom: 40px;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1;
+  }
+
+  &__assessment {
+    display: flex;
+    gap: 4px;
+  }
+
+  &__star-img {
+    width: 42px;
+    height: 42px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__grade {
+    width: 522px;
+  }
+
+  &__final {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #E0E0E0;
+  }
+
+  &__final-grade {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    color: $darkText;
+  }
+
+  &__grade-list {
+    padding-top: 25px;
+  }
+
+  &__grade-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1;
+    color: $darkText;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__grade-progress {
+    width: 360px;
+    height: 5px;
+    border-radius: 4px;
+    background-color: #E0E0E0;
+
+    &-completed {
+      height: 100%;
+      border-radius: 4px;
+      background-color: #FABC22;
+    }
+  }
+
+  &__grade-number-ratings {
+    display: block;
+    width: 48px;
+  }
+
+  &__grade-number-star {
+    width: 85.5px;
+  }
+
+  &__tab {
+    margin-right: 25px;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 38px;
+    color: $darkText;
+    opacity: 0.5;
+    cursor: pointer;
+
+    &_active {
+      text-decoration: underline;
+      opacity: 1;
+    }
+  }
+
+  &__tab-content {
+    display: none;
+
+    &_active {
+      display: block;
+    }
+
+    &[data-path=tab-reviews-2] {
+      max-width: 750px;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__inner {
+    margin-bottom: 40px;
+  }
+
+  &__swiper {
+    overflow: hidden;
+    max-width: 900px;
+  }
+
+  &__slide {
+    border: 1px solid #E0E0E0;
+    border-radius: 16px;
+  }
+
+  &__slide-img {
+    width: 100%;
+    border-radius: 16px;
+  }
+
+  &__swiper-wrapper {
+    position: relative;
+    padding-right: 60px;
+    margin-bottom: 40px;
+  }
+
+  &__swiper-button-next,
+  &__swiper-button-prev {
+    position: absolute;
+    right: 0;
+    top: 30%;
+    height: 46px;
+    width: 20px;
+    transform: translateY(-50%);
+
+    &:after {
+      content: 'next';
+      font-family: swiper-icons;
+      font-size: var(--swiper-navigation-size);
+      letter-spacing: 0;
+      text-transform: none;
+      font-variant: initial;
+      line-height: 1;
+      transform: rotate(90deg);
+      cursor: pointer;
+    }
+  }
+
+  &__swiper-button-prev {
+    top: 70%;
+    &:after {
+      content: 'prev';
+      transform: rotate(-90deg);
+    }
+  }
+
+  &__comment {
+    max-width: 850px;
+  }
+
+  &__comment-top {
+    display: flex;
+    margin-bottom: 8px;
+  }
+
+  &__comment-bottom {
+    margin-bottom: 40px;
+  }
+
+  &__client-avatar {
+    margin-right: 30px;
+    border-radius: 50%;
+  }
+
+  &__client-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: auto;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: $darkText;
+  }
+
+  &__client-name {
+    margin-bottom: 4px;
+  }
+
+  &__comment-assessment {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  &__comment-star-img {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__comment-title {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    color: $darkText;
+  }
+
+  &__comment-text {
+    margin-bottom: 25px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    color: $darkText;
+  }
+
+  &__comment-dignity,
+  &__limitations {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  &__comment-dignity {
+    margin-bottom: 20px;
+  }
+
+  &__comment-dignity-title,
+  &__comment-limitations-title {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 400;
+  }
+
+  &__show-more {
+    @include buttonReset();
+    padding: 10.5px 149px;
+    background-color: $cornflower;
+    border: 2px solid transparent;
+    border-radius: 14px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    color: #fff;
+    transition: background-color .2s ease-in-out, color .2s ease-in-out, border-color .2s ease-in-out;
+
+    &:hover:not(:active),
+    &:focus-visible:not(:active) {
+      color: $cornflower;
+      background-color: #fff;
+      border-color: $cornflower;
+    }
+
+    &:active {
+      color: #fff;
+      background-color: #4166A8;
+    }
+  }
+
+  &__form {
+    margin-bottom: 40px;
+  }
+
+  &__fieldset {
+    @include fieldsetReset();
+    padding: 22px 23px;
+    border: 1px solid #E0E0E0;
+    border-radius: 16px;
+  }
+
+  &__massage {
+    width: 100%;
+    height: 85px;
+    padding: 7px 9px;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    resize: none;
+    color: $darkText;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 19px;
+      color: $darkText;
+      opacity: .5;
+    }
+  }
+
+  &__questions {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-bottom: 40px;
+  }
+
+  &__question {
+    padding-left: 35px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E0E0E0;
+  }
+
+  &__question-info {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  &__form-title {
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    color: $darkText;
+  }
+
+  &__question-avatar {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    object-fit: scale-down;
+    border-radius: 50%;
+  }
+  
+  &__question-author-name {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: $darkText;
+  }
+
+  &__question-text {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    color: $darkText;
+  }
+
+  &__answer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__answer-author-name {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    color: $darkText;
+  }
+
+  &__answer-text {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    color: $darkText;
+  }
+
+  &__answer-link {
+    color: $darkText;
+    text-decoration: underline;
+    transition: color .2s ease-in-out;
+
+    &:hover:not(:active),
+    &:focus-visible:not(:active) {
+      color: $cornflower;
+    }
+
+    &:active {
+      color: $active;
+    }
+  }
+}
+
+@media (max-width: 1600px) {
+  .reviews {
+    &__swiper-wrapper {
+      max-width: 740px;
+      padding-right: 40px;
+    }
+    &__swiper {
+      max-width: 700px;
+    }
+  }
+}
+
+@media (max-width: 1366px) {
+  .reviews {
+    margin-bottom: $marginSection_1024;
+
+    &__container {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    &__grade {
+      margin-bottom: 55px;
+    }
+
+    &__swiper {
+      max-width: 100%;
+    }
+
+    &__swiper-wrapper {
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 967px) {
+  .reviews {
+    margin-bottom: $marginSection_768;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews {
+    &__tab {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .reviews {
+    margin-bottom: $marginSection_320;
+
+    &__star-img {
+      width: 22px;
+      height: 22px;
+    }
+
+    &__assessment {
+      gap: 2px;
+    }
+
+    &__final {
+      padding-bottom: 6px;
+    }
+
+    &__grade-progress {
+      width: 200px;
+    }
+
+    &__grade-number-star {
+      width: 60px;
+    }
+
+    &__grade {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+
+    &__final-grade {
+      font-size: 20px;
+      line-height: 27px;
+    }
+
+    &__grade-list {
+      padding-top: 15px;
+    }
+
+    &__grade-number-star,
+    &__grade-number-ratings {
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    &__grade-number-ratings {
+      width: 26px;
+    }
+
+    &__title {
+      margin-bottom: 20px;
+      font-size: 22px;
+      line-height: 30px;
+    }
+
+    &__tab {
+      display: block;
+      font-size: 20px;
+      line-height: 30px;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+
+    &__inner {
+      margin-bottom: 20px;
+    }
+
+    &__slide {
+      border-radius: 4px;
+    }
+
+    &__swiper-wrapper {
+      padding-right: 20px;
+    }
+
+    &__swiper-button-prev,
+    &__swiper-button-next {
+      width: 10px;
+      height: 20px;
+    }
+
+    &__swiper-button-next {
+      top: 25%;
+    }
+
+    &__swiper-button-prev {
+      top: 65%;
+    }
+
+    &__swiper-button-prev:after,
+    &__swiper-button-next:after {
+      font-size: 10px;
+    }
+
+    &__swiper-wrapper {
+      margin-bottom: 25px;
+    }
+
+    &__client-avatar {
+      width: 60px;
+      height: 60px;
+      margin-right: 10px;
+    }
+
+    &__client-info {
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    &__comment-star-img {
+      width: 14px;
+      height: 14px;
+    }
+
+    &__comment-title {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    &__comment-text {
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    &__comment-dignity {
+      margin-bottom: 10px;
+    }
+
+    &__comment-dignity,
+    &__limitations {
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    &__comment-bottom {
+      margin-bottom: 20px;
+    }
+
+    &__show-more {
+      padding: 6px 46px;
+      border-radius: 10px;
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    &__fieldset {
+      padding: 10px 16px;
+    }
+
+    &__form-title {
+      margin-bottom: 10px;
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    &__massage {
+      height: 66px;
+      font-size: 14px;
+      line-height: 19px;
+
+      &::placeholder {
+        font-size: 14px;
+      }
+    }
+
+    &__form {
+      margin-bottom: 20px;
+    }
+
+    &__question {
+      padding-left: 0;
+    }
+
+    &__question-avatar {
+      margin-right: 10px;
+      width: 40px;
+      height: 40px;
+    }
+
+    &__question-text {
+      margin-bottom: 4px;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    &__question-author-name {
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    &__answer-author-name {
+      font-size: 16px;
+      line-height: 21px;
+    }
+
+    &__answer-text {
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    &__questions {
+      margin-bottom: 20px;
+    }
+  }
+
+}

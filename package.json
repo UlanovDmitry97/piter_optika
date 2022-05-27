@@ -42,6 +42,7 @@
     "core-js": "^3.22.4",
     "jquery": "^3.6.0",
     "jquery-touchswipe": "^1.6.19",
+    "jquery-ui-bundle": "^1.12.1-migrate",
     "swiper": "^8.1.4"
   }
 }

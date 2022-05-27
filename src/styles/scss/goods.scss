@@ -196,6 +196,8 @@
 
 @media (max-width: 1366px) {
   .goods {
+    margin-bottom: $marginSection_1024;
+
     &__list {
       gap: 20px;
     }

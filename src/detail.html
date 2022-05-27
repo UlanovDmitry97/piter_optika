@@ -77,7 +77,7 @@
 
           <nav class="control__bottom">
             <ul class="control__nav-list">
-              <li class="control__nav-item"><a class="control__nav-link" href="optics.html">Наши салоны</a></li>
+              <li class="control__nav-item"><a class="control__nav-link" href="map.html">Наши салоны</a></li>
               <li class="control__nav-item"><a class="control__nav-link" href="payment.html">Оплата</a></li>
               <li class="control__nav-item"><a class="control__nav-link" href="delivery.html">Доставка</a></li>
               <li class="control__nav-item"><a class="control__nav-link" href="contacts.html">Контакты</a></li>
@@ -169,7 +169,7 @@
           <nav class="menu__nav">
             <ul class="menu__nav-list">
               <li class="menu__nav-item">
-                <a href="optics.html" class="menu__nav-link">Наши салоны</a></li>
+                <a href="map.html" class="menu__nav-link">Наши салоны</a></li>
               <li class="menu__nav-item">
                 <a href="payment.html" class="menu__nav-link">Оплата</a></li>
               <li class="menu__nav-item">
@@ -370,7 +370,173 @@
   </section>
 
   <section class="good-detailed">
-    <div class="container"></div>
+    <div class="container">
+      <div class="good-detailed__controls">
+        <div class="good-detailed__assessment-wrapp">
+          <span class="good-detailed__assessment">
+            <img class="good-detailed__star-img" src="./images/star+.svg" alt="Оценка 5 звезд">
+            <img class="good-detailed__star-img" src="./images/star+.svg" alt="">
+            <img class="good-detailed__star-img" src="./images/star+.svg" alt="">
+            <img class="good-detailed__star-img" src="./images/star+.svg" alt="">
+            <img class="good-detailed__star-img" src="./images/star+.svg" alt="">
+          </span>
+
+          <span class="good-detailed__assessment-text">49 отзывов</span>
+        </div>
+
+        <button class="good-detailed__control good-detailed__control_favorites">
+          <svg class="good-detailed__control-icon">
+            <use xlink:href="./images/sprite.svg#heart"></use>
+          </svg>
+          <sapan class="good-detailed__control-text">в избранное</sapan>
+        </button>
+
+        <button class="good-detailed__control">
+          <svg class="good-detailed__control-icon">
+            <use xlink:href="./images/sprite.svg#right-arrow"></use>
+          </svg>
+
+          <sapan class="good-detailed__control-text">поделиться</sapan>
+        </button>
+
+        <div class="good-detailed__available">В наличии</div>
+      </div>
+
+      <div class="good-detailed__inner">
+        <div class="good-detailed__images">
+          <h2 class="good-detailed__product-name good-detailed__product-name_mobile">ST Louise SS4327</h2>
+
+          <div class="good-detailed__images-inner">
+            <img class="good-detailed__image" src="./images/goods/detail/ST_Louise_SS4327.jpg" alt="ST Louise SS4327">
+
+            <span class="good-detailed__sale">-10%</span>
+          </div>
+
+          <div class="good-detailed__slider-wrapper">
+            <div class="good-detailed__slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide good-detailed__slide">
+                  <img class="good-detailed__slider-img" src="./images/goods/detail/ST_Louise_SS4327.jpg" alt="ST Louise SS4327">
+                </div>
+
+                <div class="swiper-slide good-detailed__slide">
+                  <img class="good-detailed__slider-img" src="./images/goods/detail/ST_Louise_SS4327_2.jpg" alt="ST Louise SS4327">
+                </div>
+
+                <div class="swiper-slide good-detailed__slide">
+                  <img class="good-detailed__slider-img" src="./images/goods/detail/ST_Louise_SS4327.jpg" alt="ST Louise SS4327">
+                </div>
+
+                <div class="swiper-slide good-detailed__slide">
+                  <img class="good-detailed__slider-img" src="./images/goods/detail/ST_Louise_SS4327_2.jpg" alt="ST Louise SS4327">
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+
+        <div class="good-detailed__info">
+          <h1 class="good-detailed__product-name">ST Louise SS4327</h1>
+
+          <div class="good-detailed__colors">
+            <span class="good-detailed__choice-name">Цвет:</span>
+
+            <button class="good-detailed__color-btn good-detailed__color-btn_black good-detailed__color-btn_active"></button>
+
+            <button class="good-detailed__color-btn good-detailed__color-btn_brick"></button>
+
+            <button class="good-detailed__color-btn good-detailed__color-btn_white"></button>
+
+            <button class="good-detailed__color-btn good-detailed__color-btn_yellow"></button>
+
+            <button class="good-detailed__color-btn good-detailed__color-btn_violet"></button>
+          </div>
+
+          <div class="good-detailed__material">
+            <span class="good-detailed__choice-name">Материал:</span>
+
+            <button class="good-detailed__material-btn good-detailed__material-btn_active">Металл</button>
+
+            <button class="good-detailed__material-btn good-detailed__material-btn_hidden">Пластик</button>
+          </div>
+
+          <div class="good-detailed__size">
+            <span class="good-detailed__choice-name">Размер:</span>
+
+            <span class="good-detailed__size-text">58-14-135</span>
+          </div>
+
+          <p class="good-detailed__price">6 291 р. <span class="good-detailed__price-old">6 990 р.</span></p>
+
+          <button class="good-detailed__log-in">Авторизуйтесь, чтобы получить спец цену</button>
+
+          <button class="good-detailed__add-basket">В корзину</button>
+
+          <div id="good-detailed__tabs">
+            <ul class="good-detailed__tabs-list">
+              <li><button class="good-detailed__tabs-btn" data-target="tabs-1">Описание</button></li>
+              <li><button class="good-detailed__tabs-btn good-detailed__tabs-btn_active" data-target="tabs-2">Характеристики</button></li>
+              <li><button class="good-detailed__tabs-btn" data-target="tabs-3">Наличие в магазинах</button></li>
+            </ul>
+            <div class="good-detailed__tabs-content" data-path="tabs-1">
+              <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
+            </div>
+            <div class="good-detailed__tabs-content good-detailed__tabs-content_active" data-path="tabs-2">
+              <table class="good-detailed__characteristics">
+                <tbody>
+                <tr>
+                  <td class="good-detailed__td good-detailed__td_gray">Артикул</td>
+                  <td class="good-detailed__td good-detailed__td_gray good-detailed__td_text-end">TF 5745-B 052 54</td>
+                </tr>
+                <tr>
+                  <td class="good-detailed__td">Код товара</td>
+                  <td class="good-detailed__td good-detailed__td_text-end">#131139</td>
+                </tr>
+                <tr>
+                  <td class="good-detailed__td good-detailed__td_gray">Страна - производитель</td>
+                  <td class="good-detailed__td good-detailed__td_gray good-detailed__td_text-end">Италия</td>
+                </tr>
+                </tbody>
+              </table>
+
+              <a class="good-detailed__characteristics-link" href="#">Подробнее</a>
+            </div>
+            <div class="good-detailed__tabs-content" data-path="tabs-3">
+              <ul class="good-detailed__availability-list">
+                <li class="good-detailed__availability-item">
+                  <a href="#" class="good-detailed__availability-link">пр. Энгельса, д. 154 ТРК Гранд Каньон (м. Проспект просвещения) </a>
+                </li>
+
+                <li class="good-detailed__availability-item">
+                  телефон: <a href="tel:+79602370244" class="good-detailed__availability-tell">+7 (960) 237-02-44</a>
+                </li>
+                <li class="good-detailed__availability-item">Остаток: 1</li>
+              </ul>
+
+              <ul class="good-detailed__availability-list">
+                <li class="good-detailed__availability-item">
+                  <a href="#" class="good-detailed__availability-link">ул. Васи Алексеева, д. 6 (ТРК Румба) (м. Кировский завод)</a>
+                </li>
+
+                <li class="good-detailed__availability-item">
+                  телефон: <a href="tel:+79673405512" class="good-detailed__availability-tell">+7 (967) 340-55-12</a>
+                </li>
+                <li class="good-detailed__availability-item">Остаток: 3</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="good-detailed__buy-mobile">
+        <p class="good-detailed__price-mobile">6 291 р. <span class="good-detailed__price-old-mobile">6 990 р.</span></p>
+
+        <button class="good-detailed__add-basket-mobile">В корзину</button>
+      </div>
+    </div>
   </section>
 
   <section class="goods">
@@ -937,6 +1103,242 @@
             </article>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <div class="container reviews__container">
+      <div class="reviews__left">
+        <h2 class="section-title reviews__title">Отзывы и вопросы о товаре</h2>
+
+        <div class="reviews__inner">
+          <span data-target="tab-reviews-1" class="reviews__tab reviews__tab_active">Отзывы о товаре</span>
+
+          <span data-target="tab-reviews-2" class="reviews__tab">Вопросы и ответы о товаре</span>
+        </div>
+
+        <div data-path="tab-reviews-1" class="reviews__tab-content reviews__tab-content_active">
+          <div class="reviews__swiper-wrapper">
+            <div class="reviews__swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide reviews__slide">
+                  <img class="reviews__slide-img" src="./images/goods/detail/ST_Louise_SS4327_2.jpg" alt="ST Louise SS4327">
+                </div>
+                <div class="swiper-slide reviews__slide">
+                  <img class="reviews__slide-img" src="./images/goods/detail/ST_Louise_SS4327_2.jpg" alt="ST Louise SS4327">
+                </div>
+                <div class="swiper-slide reviews__slide">
+                  <img class="reviews__slide-img" src="./images/goods/detail/ST_Louise_SS4327_2.jpg" alt="ST Louise SS4327">
+                </div>
+                <div class="swiper-slide reviews__slide">
+                  <img class="reviews__slide-img" src="./images/goods/detail/ST_Louise_SS4327_2.jpg" alt="ST Louise SS4327">
+                </div>
+                <div class="swiper-slide reviews__slide">
+                  <img class="reviews__slide-img" src="./images/goods/detail/ST_Louise_SS4327_2.jpg" alt="ST Louise SS4327">
+                </div>
+                <div class="swiper-slide reviews__slide">
+                  <img class="reviews__slide-img" src="./images/goods/detail/ST_Louise_SS4327_2.jpg" alt="ST Louise SS4327">
+                </div>
+              </div>
+            </div>
+
+            <div class="reviews__swiper-button-prev"></div>
+            <div class="reviews__swiper-button-next"></div>
+          </div>
+
+          <div class="reviews__comment">
+            <div class="reviews__comment-top">
+              <img class="reviews__client-avatar" src="./images/client/avatar.jpg" alt="Аватар">
+
+              <p class="reviews__client-info">
+                <span class="reviews__client-name">Ксения</span>
+
+                <span class="reviews__comment-date">9 марта 2022</span>
+              </p>
+
+              <span class="reviews__comment-assessment">
+                <img class="reviews__comment-star-img" src="./images/star+.svg" alt="Оценка 5 звезд">
+                <img class="reviews__comment-star-img" src="./images/star+.svg" alt="">
+                <img class="reviews__comment-star-img" src="./images/star+.svg" alt="">
+                <img class="reviews__comment-star-img" src="./images/star+.svg" alt="">
+                <img class="reviews__comment-star-img" src="./images/star+.svg" alt="">
+              </span>
+            </div>
+
+            <div class="reviews__comment-bottom">
+              <h3 class="reviews__comment-title">Классная оправа!</h3>
+
+              <p class="reviews__comment-text">
+                Давно искала качественную оправу, которая будет соответствовать цене и качеству. Когда увидела эту оправу, купила деже без примерки, потому что давно искала что то подобное. И цена очень приятная!
+              </p>
+
+              <p class="reviews__comment-dignity">
+                <span class="reviews__comment-dignity-title">
+                  Достоинства
+                </span>
+
+                <span class="reviews__comment-dignity-text">Очень качественные.</span>
+              </p>
+
+              <p class="reviews__limitations">
+                <span class="reviews__comment-limitations-title">
+                  Недостатки
+                </span>
+
+                <span class="reviews__comment-limitations-text">Их просто нет.</span>
+              </p>
+            </div>
+
+            <button class="reviews__show-more">Смотреть все отзывы</button>
+          </div>
+        </div>
+
+        <div data-path="tab-reviews-2" class="reviews__tab-content">
+          <form class="reviews__form" action="/">
+            <fieldset class="reviews__fieldset">
+              <p class="reviews__form-title">Задайте вопрос</p>
+
+              <textarea class="reviews__massage" name="massage" placeholder="Напишите свой вопрос"></textarea>
+            </fieldset>
+          </form>
+
+          <ul class="reviews__questions">
+            <li class="reviews__question">
+              <article>
+                <div class="reviews__question-info">
+                  <img class="reviews__question-avatar" src="./images/client/avatar.jpg" alt="Аватар">
+
+                  <p class="reviews__question-inner">
+                    <span class="reviews__question-text">Где можно примереть очки?</span>
+
+                    <span class="reviews__question-author-name">Ксения</span>
+                  </p>
+                </div>
+
+                <div class="reviews__answer-info">
+                  <p class="reviews__answer">
+                    <span class="reviews__answer-author-name">Оператор</span>
+
+                    <span class="reviews__answer-text">
+                      Добрый день! Спасибо за вопрос. Оправу можно примерить в любом, удобном, салоне оптики. Адреса можно посмотреть по ссылке: <a class="reviews__answer-link" href="#">адреса.</a>
+                    </span>
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li class="reviews__question">
+              <article>
+                <div class="reviews__question-info">
+                  <img class="reviews__question-avatar" src="./images/client/avatar.jpg" alt="Аватар">
+
+                  <p class="reviews__question-inner">
+                    <span class="reviews__question-text">Где можно примереть очки?</span>
+
+                    <span class="reviews__question-author-name">Ксения</span>
+                  </p>
+                </div>
+
+                <div class="reviews__answer-info">
+                  <p class="reviews__answer">
+                    <span class="reviews__answer-author-name">Оператор</span>
+
+                    <span class="reviews__answer-text">
+                      Добрый день! Спасибо за вопрос. Оправу можно примерить в любом, удобном, салоне оптики. Адреса можно посмотреть по ссылке: <a class="reviews__answer-link" href="#">адреса.</a>
+                    </span>
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li class="reviews__question">
+              <article>
+                <div class="reviews__question-info">
+                  <img class="reviews__question-avatar" src="./images/client/avatar.jpg" alt="Аватар">
+
+                  <p class="reviews__question-inner">
+                    <span class="reviews__question-text">Где можно примереть очки?</span>
+
+                    <span class="reviews__question-author-name">Ксения</span>
+                  </p>
+                </div>
+
+                <div class="reviews__answer-info">
+                  <p class="reviews__answer">
+                    <span class="reviews__answer-author-name">Оператор</span>
+
+                    <span class="reviews__answer-text">
+                      Добрый день! Спасибо за вопрос. Оправу можно примерить в любом, удобном, салоне оптики. Адреса можно посмотреть по ссылке: <a class="reviews__answer-link" href="#">адреса.</a>
+                    </span>
+                  </p>
+                </div>
+              </article>
+            </li>
+          </ul>
+
+          <button class="reviews__show-more">Смотреть все вопросы</button>
+        </div>
+      </div>
+
+      <div data-path="tab-reviews-1" class="reviews__grade reviews__tab-content reviews__tab-content_active">
+        <div class="reviews__final">
+          <span class="reviews__assessment">
+            <img class="reviews__star-img" src="./images/star+.svg" alt="Оценка 5 звезд">
+            <img class="reviews__star-img" src="./images/star+.svg" alt="">
+            <img class="reviews__star-img" src="./images/star+.svg" alt="">
+            <img class="reviews__star-img" src="./images/star+.svg" alt="">
+            <img class="reviews__star-img" src="./images/star+.svg" alt="">
+          </span>
+
+          <span class="reviews__final-grade">4.85 / 5</span>
+        </div>
+
+        <ul class="reviews__grade-list">
+          <li class="reviews__grade-item">
+            <span class="reviews__grade-number-star">5 звезд</span>
+
+            <div class="reviews__grade-progress">
+              <div style="width: 81%" class="reviews__grade-progress-completed"></div>
+            </div>
+
+            <span class="reviews__grade-number-ratings">331</span>
+          </li>
+          <li class="reviews__grade-item">
+            <span class="reviews__grade-number-star">4 звезды</span>
+
+            <div class="reviews__grade-progress">
+              <div style="width: 14%" class="reviews__grade-progress-completed"></div>
+            </div>
+
+            <span class="reviews__grade-number-ratings">9</span>
+          </li>
+          <li class="reviews__grade-item">
+            <span class="reviews__grade-number-star">3 звезды</span>
+
+            <div class="reviews__grade-progress">
+              <div style="width: 5.5%" class="reviews__grade-progress-completed"></div>
+            </div>
+
+            <span class="reviews__grade-number-ratings">3</span>
+          </li>
+          <li class="reviews__grade-item">
+            <span class="reviews__grade-number-star">2 звезды</span>
+
+            <div class="reviews__grade-progress">
+              <div style="width: 2.7%" class="reviews__grade-progress-completed"></div>
+            </div>
+
+            <span class="reviews__grade-number-ratings">3</span>
+          </li>
+          <li class="reviews__grade-item">
+            <span class="reviews__grade-number-star">1 звезда</span>
+
+            <div class="reviews__grade-progress">
+              <div style="width: 8.3%" class="reviews__grade-progress-completed"></div>
+            </div>
+
+            <span class="reviews__grade-number-ratings">7</span>
+          </li>
+        </ul>
       </div>
     </div>
   </section>

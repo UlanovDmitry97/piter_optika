@@ -1,9 +1,18 @@
-import {createPopularGoodsSwiper, createPromotionSwiper} from './components/Swipers';
+import {
+  createGoodsSwiper,
+  createPromotionSwiper,
+  createGoodDetailedSwiper,
+  createReviewsSwiper, createLocationSwiper
+} from './components/Swipers';
 import {showMorePopular} from './components/showMore'
 import {directorModal, modalBuy, statusModal} from "./components/HeaderModal";
 import {footerMenu, scroll} from "./components/footer";
 import {filterMobile, sortingDropdown, sortingMobile, sortingShowMore} from "./components/sorting";
 import {sortingSelect} from "./components/choise";
+import {choiceColor, sliderImgAdd, tabsDetailInfo, tabsReviews} from "./components/detail";
+import {map} from "./components/map";
+import {accordionLocation, locationTabs} from "./components/location";
+import {articlesShowMore} from "./components/articles";
 
 const burger = document.querySelector('.burger');
 const menu = document.querySelector('.menu');
@@ -40,7 +49,10 @@ document.addEventListener('click', event => {
 
 // Слайдеры
 createPromotionSwiper();
-createPopularGoodsSwiper();
+createGoodsSwiper();
+createGoodDetailedSwiper();
+createReviewsSwiper();
+createLocationSwiper();
 
 //Кнопки смотреть все
 showMorePopular();
@@ -62,3 +74,19 @@ sortingShowMore();
 sortingSelect();
 filterMobile();
 sortingMobile();
+
+//Детальная страница
+sliderImgAdd();
+choiceColor();
+tabsDetailInfo();
+tabsReviews();
+
+//Карта
+map();
+
+//Локация
+locationTabs();
+accordionLocation();
+
+//Статьи
+articlesShowMore();

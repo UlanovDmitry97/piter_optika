@@ -66,6 +66,33 @@ picture {
   }
 }
 
+.swiper-button-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.swiper-button-prev,
+.swiper-button-next  {
+  right: 65%;
+  top: 98%;
+  bottom: 0;
+  color: $darkText;
+  transform: translateX(50%);
+}
+
+.swiper-button-prev {
+  left: 65%;
+  transform: translateX(-50%);
+}
+
+.swiper-button-prev:after {
+  transform: rotate(90deg);
+}
+
+.swiper-button-next:after {
+  transform: rotate(90deg);
+}
+
 .hidden {
   overflow: hidden;
 }
@@ -213,8 +240,10 @@ picture {
 }
 
 .pagination {
-  &__list {
-    display: flex;
+  display: flex;
+
+  &__center {
+    justify-content: center;
   }
 
   &__link {
@@ -261,9 +290,7 @@ picture {
   }
 
   .pagination {
-    &__list {
-      justify-content: center;
-    }
+    justify-content: center;
   }
 }
 
@@ -287,7 +314,7 @@ picture {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   .container {
     padding-left: 13px;
     padding-right: 13px;
@@ -308,6 +335,19 @@ picture {
     height: 4px;
     margin-right: 4px !important;
     margin-left: 4px !important;
+  }
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 15px;
+  }
+
+  .swiper-button-next {
+    right: 70%;
+  }
+
+  .swiper-button-prev {
+    left: 70%;
   }
 
   .bread-crumbs {
